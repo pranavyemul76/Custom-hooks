@@ -32,7 +32,8 @@ const UseDebounce: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [debouncedSearchTerm, debounceLoading] = useDebounce<string>(
     searchTerm,
-    600
+    600,
+    true
   );
   const [filteredData, setFilteredData] = useState<string[]>(dummyData);
   const [loading, setLoading] = useState<boolean>(false);
