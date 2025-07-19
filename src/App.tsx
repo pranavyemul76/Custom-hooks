@@ -4,6 +4,7 @@ import OutSideClick from "./components/OutSideClick";
 import UseLocalStorage from "./components/UseLocalStorage";
 import UseDebounce from "./components/UseDebounce";
 import UseInfiniteScroll from "./components/UseInfiniteScroll";
+import UseHorizontalScroll from "./components/UseHorizontalScroll";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/local-storage" element={<UseLocalStorage />} />
           <Route path="/debounce" element={<UseDebounce />} />
           <Route path="/infinite-scroll" element={<UseInfiniteScroll />} />
+          <Route path="/horizontal-scroll" element={<UseHorizontalScroll />} />
         </Routes>
       </BrowserRouter>
     </>
