@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import useInfiniteScroll from "../hooks/useInfiniteScroll";
+import CodeExmapleLayout from "../commonCompoments/CodeExmapleLayout";
 
 const wait = () => {
   return new Promise((resolve) =>
@@ -36,18 +37,25 @@ export default function UseInfiniteScroll() {
   });
 
   return (
-    <div>
+    <CodeExmapleLayout
+      exampleCode={`export default function Hello() {
+                     return <div>Hello, world!</div>;
+              `}
+      hookCode={`export default function Hello() {
+                     return <div>Hello, world!</div>;
+              `}
+    >
       <div
         ref={containerRef}
-        className="bg-indigo-600 max-h-screen min-w-full overflow-y-auto"
+        className=" max-h-[800px] min-w-[50%] no-scrollbar overflow-y-auto"
       >
         {items.map((item) => {
           return (
             <div
               key={item}
-              className="h-80 w-80 border m-3 mx-auto border-white bg-indigo-500"
+              className="h-80 w-80 border m-3 mx-auto flex justify-center items-center text-3xl text-white border-white bg-secondary"
             >
-              {item}
+              <span> {item}</span>
             </div>
           );
         })}
@@ -62,6 +70,6 @@ export default function UseInfiniteScroll() {
           </div>
         )}
       </div>
-    </div>
+    </CodeExmapleLayout>
   );
 }
