@@ -28,7 +28,7 @@ export default function useInfiniteScroll<T extends HTMLElement>({
 
     container.addEventListener("scroll", handleScroll);
     return () => container.removeEventListener("scroll", handleScroll);
-  }, [callback, threshold, enabled]);
+  }, [callback, threshold, enabled, loading]);
 
   return containerRef;
 }

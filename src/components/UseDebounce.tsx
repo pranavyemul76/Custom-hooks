@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useDebounce from "../hooks/useDebounce";
+import CodeExmapleLayout from "../commonCompoments/CodeExmapleLayout";
 
 const dummyData: string[] = [
   "React",
@@ -67,36 +68,45 @@ const UseDebounce: React.FC = () => {
   }, [debouncedSearchTerm]);
 
   return (
-    <div className="bg-violet-400 min-h-screen">
-      <div className="p-4 max-w-md mx-auto">
-        <input
-          type="text"
-          className="border rounded px-4 py-2 w-full"
-          placeholder="Search technology..."
-          value={searchTerm}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setLoading(true);
-            setSearchTerm(e.target.value);
-          }}
-        />
-      </div>
+    <CodeExmapleLayout
+      exampleCode={`export default function Hello() {
+                         return <div>Hello, world!</div>;
+                  `}
+      hookCode={`export default function Hello() {
+                         return <div>Hello, world!</div>;
+                  `}
+    >
+      <div className="min-h-full">
+        <div className="p-4 max-w-md mx-auto">
+          <input
+            type="text"
+            className="border rounded px-4 py-2 w-full"
+            placeholder="Search technology..."
+            value={searchTerm}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setLoading(true);
+              setSearchTerm(e.target.value);
+            }}
+          />
+        </div>
 
-      <div className="flex text-3xl text-white justify-center items-center p-4">
-        {debounceLoading ? (
-          <div>Debounce start, please wait...</div>
-        ) : loading ? (
-          <div>Filtering data, please wait...</div>
-        ) : filteredData.length > 0 ? (
-          <ul className="list-disc pl-5 space-y-1">
-            {filteredData.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        ) : (
-          <p>No results found.</p>
-        )}
+        <div className="flex text-3xl text-white justify-center items-center p-4">
+          {debounceLoading ? (
+            <div>Debounce start, please wait...</div>
+          ) : loading ? (
+            <div>Filtering data, please wait...</div>
+          ) : filteredData.length > 0 ? (
+            <ul className="list-disc pl-5 space-y-1">
+              {filteredData.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>No results found.</p>
+          )}
+        </div>
       </div>
-    </div>
+    </CodeExmapleLayout>
   );
 };
 
