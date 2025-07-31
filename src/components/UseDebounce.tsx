@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useDebounce from "../hooks/useDebounce";
-import CodeExmapleLayout from "../commonCompoments/CodeExmapleLayout";
+import CodeExampleLayout from "../commonComponents/CodeExampleLayout";
 
 const dummyData: string[] = [
   "React",
@@ -68,14 +68,7 @@ const UseDebounce: React.FC = () => {
   }, [debouncedSearchTerm]);
 
   return (
-    <CodeExmapleLayout
-      exampleCode={`export default function Hello() {
-                         return <div>Hello, world!</div>;
-                  `}
-      hookCode={`export default function Hello() {
-                         return <div>Hello, world!</div>;
-                  `}
-    >
+    <CodeExampleLayout>
       <div className="min-h-full">
         <div className="p-4 max-w-md mx-auto">
           <input
@@ -106,7 +99,7 @@ const UseDebounce: React.FC = () => {
           )}
         </div>
       </div>
-    </CodeExmapleLayout>
+    </CodeExampleLayout>
   );
 };
 
