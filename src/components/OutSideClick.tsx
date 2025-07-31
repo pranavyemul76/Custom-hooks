@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import useOutSideClick from "../hooks/useOutSideClick";
-import CodeExmapleLayout from "../commonCompoments/CodeExmapleLayout";
+import CodeExampleLayout from "../commonComponents/CodeExampleLayout";
 
 const OutSideClick: React.FC = () => {
   const [openBox, setOpenBox] = useState<boolean>(false);
@@ -17,14 +17,7 @@ const OutSideClick: React.FC = () => {
 
   return (
     <>
-      <CodeExmapleLayout
-        exampleCode={`export default function Hello() {
-                     return <div>Hello, world!</div>;
-              `}
-        hookCode={`export default function Hello() {
-                     return <div>Hello, world!</div>;
-              `}
-      >
+      <CodeExampleLayout>
         <div className="relative h-full w-full">
           <div className="min-h-full relative z-0 flex justify-center items-center min-w-full">
             <button className="p-7 text-white text-4xl" onClick={handleBox}>
@@ -43,7 +36,7 @@ const OutSideClick: React.FC = () => {
             </div>
           )}
         </div>
-      </CodeExmapleLayout>
+      </CodeExampleLayout>
     </>
   );
 };

@@ -1,18 +1,11 @@
-import CodeExmapleLayout from "../commonCompoments/CodeExmapleLayout";
+import CodeExampleLayout from "../commonComponents/CodeExampleLayout";
 import { useHorizontalScroll } from "../hooks/useHorizontalScroll";
 
 const HorizontalGridScroll = () => {
   const { scrollRef, scroll } = useHorizontalScroll();
 
   return (
-    <CodeExmapleLayout
-      exampleCode={`export default function Hello() {
-                     return <div>Hello, world!</div>;
-              `}
-      hookCode={`export default function Hello() {
-                     return <div>Hello, world!</div>;
-              `}
-    >
+    <CodeExampleLayout>
       <div className="min-h-full w-full flex z-3">
         <div className="relative w-full px-8 my-auto">
           <button
@@ -44,7 +37,7 @@ const HorizontalGridScroll = () => {
           </button>
         </div>
       </div>
-    </CodeExmapleLayout>
+    </CodeExampleLayout>
   );
 };
 

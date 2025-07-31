@@ -1,4 +1,4 @@
-import PostCard from "../commonCompoments/PostCard";
+import PostCard from "../commonComponents/PostCard";
 
 export default function Home() {
   const posts = [
