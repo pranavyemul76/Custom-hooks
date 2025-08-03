@@ -22,7 +22,9 @@ export default function CodeExampleLayout({ children }: PropsWithChildren) {
 
   return (
     <div className="grid grid-cols-2 gap-1 min-h-[88.8vh]">
-      <div className="bg-primary h-full">{children}</div>
+      <div className="bg-primary h-full flex justify-center items-center">
+        {children}
+      </div>
 
       <div className="bg-[#1e1e1e] text-white overflow-y-auto font-mono p-4 shadow-xl w-full max-w-4xl mx-auto">
         <div className="flex space-x-2 mb-4">
