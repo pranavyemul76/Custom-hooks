@@ -1,36 +1,33 @@
-import React,{useState,useEffect, HTMLAttributeAnchorTarget} from 'react'
+import OutSideClick from "./components/OutSideClick";
+import UseLocalStorage from "./components/UseLocalStorage";
+import UseDebounce from "./components/UseDebounce";
+import UseInfiniteScroll from "./components/UseInfiniteScroll";
+import UseHorizontalScroll from "./components/UseHorizontalScroll";
+import Home from "./pages/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./commonComponents/Layout";
+import UseIsOnline from "./components/useIsOnline";
 
-export default function App() {
-   const [ userData, setUserData]= useState({name:"", email:"",phone:""})
-   userData.name.length
-  const  validateUser=()=>{
-        if(userData.phone.length<9 && userData.phone.length>10)
-        {
-            return false;
-        } 
-      return true;
-  }
-    const handleInput=(e)=>
-        {
-             const {name,value} = e.target;
-            setUserData({[name]:value});
-        }
-    const handleSubmit =(e:HTMLAttributeAnchorTarget)=>{
-       e.preve
-     
-       if(validateUser()===false){
-      alert("Form Invalid");
-       }
-    }
-    
-  return <>
-      <h1>"Hello"</h1>
-      <form onSubmit= { (e) => handleSubmit(e) }>
-      
-      <input type='text'  name="name" value={userData.name} onChange={handleInput} />
-      <input type="email" name="email"  value={userData.email} onChange={handleInput}/>
-      <input type="text" name="phone" value={userData.phone} onChange={handleInput} />
-          <input type='submit' />
-   </form>
-  </>
+function App() {
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/out-side-click" element={<OutSideClick />} />
+            <Route path="/local-storage" element={<UseLocalStorage />} />
+            <Route path="/debounce" element={<UseDebounce />} />
+            <Route path="/infinite-scroll" element={<UseInfiniteScroll />} />
+            <Route
+              path="/horizontal-scroll"
+              element={<UseHorizontalScroll />}
+            />
+            <Route path="/network-status" element={<UseIsOnline />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
+export default App;

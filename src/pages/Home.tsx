@@ -6,6 +6,7 @@ export default function Home() {
     { title: "UseDebounce", url: "debounce" },
     { title: "UseHorizontalScroll", url: "horizontal-scroll" },
     { title: "UseInfiniteScroll", url: "infinite-scroll" },
+    { title: "UseIsOnline", url: "network-status" },
   ];
 
   return (
