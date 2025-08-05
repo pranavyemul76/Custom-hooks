@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./commonComponents/Layout";
 import UseIsOnline from "./components/useIsOnline";
+import UseDeviceType from "./components/UseDeviceType";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/local-storage" element={<UseLocalStorage />} />
             <Route path="/debounce" element={<UseDebounce />} />
             <Route path="/infinite-scroll" element={<UseInfiniteScroll />} />
+            <Route path="device-type" element={<UseDeviceType />} />
             <Route
               path="/horizontal-scroll"
               element={<UseHorizontalScroll />}

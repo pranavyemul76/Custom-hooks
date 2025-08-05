@@ -7,6 +7,7 @@ export default function Home() {
     { title: "UseHorizontalScroll", url: "horizontal-scroll" },
     { title: "UseInfiniteScroll", url: "infinite-scroll" },
     { title: "UseIsOnline", url: "network-status" },
+    { title: "DeviceType", url: "device-type" },
   ];
 
   return (
